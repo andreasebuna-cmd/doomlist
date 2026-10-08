@@ -80,3 +80,24 @@ footer{position:relative;z-index:1;display:flex;align-items:center;justify-conte
 @keyframes hintPulse{50%{opacity:.35;transform:scale(.7)}}
 @media(max-width:700px){.portal-intro{padding:18px 15px 22px}.portal-topline,.portal-bottomline{font-size:7px;letter-spacing:1px}.portal-topline span:first-child{font-size:10px}.portal-core{width:min(78vw,420px,54vh);min-width:245px}.portal-side-note{display:none}.portal-rune{width:26px;height:26px;font-size:17px}.portal-label{font-size:7px;letter-spacing:1.2px;bottom:10%}.milky-way{width:210%;left:-55%;top:34%;height:44%}}
 @media(prefers-reduced-motion:reduce){.portal-intro *,.portal-intro:before,.portal-intro:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.portal-intro.entering .portal-core{transform:scale(8);opacity:0}}
+
+
+/* PORTAL FIX: keep a clear aperture so the actual page is visible behind it. */
+.portal-cosmos{
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,transparent 0 22%,rgba(0,0,0,.18) 25%,#000 31%);
+  mask-image:radial-gradient(circle at 50% 50%,transparent 0 22%,rgba(0,0,0,.18) 25%,#000 31%);
+}
+.portal-intro.entering .portal-cosmos{
+  animation:cosmosReveal 1.5s cubic-bezier(.65,0,.9,.35) forwards;
+}
+.portal-intro.entering .portal-core{
+  animation:portalDive 1.5s cubic-bezier(.55,.03,.84,.45) forwards;
+  transform-origin:center center;
+}
+@keyframes portalDive{
+  0%{transform:translate3d(0,0,0) scale(1) rotate(0);opacity:1;filter:drop-shadow(0 0 25px #b78aff6b)}
+  20%{transform:translate3d(0,0,0) scale(1.2) rotate(-3deg)}
+  48%{transform:translate3d(0,0,0) scale(2.4) rotate(5deg)}
+  76%{transform:translate3d(0,0,0) scale(5.5) rotate(-3deg)}
+  100%{transform:translate3d(0,0,0) scale(10) rotate(5deg);opacity:.25;filter:drop-shadow(0 0 0 transparent)}
+}
