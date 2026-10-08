@@ -80,3 +80,10 @@ body.auth-locked{overflow:hidden}.signup-only.hidden{display:none!important}
 .terms-content h3{font:600 12px Orbitron;color:#dfcaff;margin:23px 0 8px}.terms-content p{font-size:13px;line-height:1.7;color:#b7a9ca}
 .terms-content .terms-note{border-top:1px solid #ffffff1a;padding-top:15px;color:#8e7da5;font-size:11px}
 @media(max-width:700px){.auth-gate{padding:14px}.auth-card{padding:25px 22px 22px;border-radius:22px}.auth-emblem{margin:20px auto 14px;width:55px;height:55px}.auth-intro{margin-bottom:20px}.terms-window{padding:28px 20px}.footer-terms{line-height:1.8}}
+
+/* Subtle drifting magical particles */
+body:before,body:after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:0;background-repeat:repeat;background-size:260px 260px;opacity:.24}
+body:before{background-image:radial-gradient(circle at 24px 35px,#e4ceff 0 1px,transparent 1.8px),radial-gradient(circle at 124px 168px,#a87bff 0 1.5px,transparent 2px),radial-gradient(circle at 218px 74px,#e4ceff 0 1px,transparent 1.8px);animation:particleDrift 38s linear infinite}
+body:after{background-size:340px 340px;background-image:radial-gradient(circle at 80px 100px,#cba8ff 0 1.5px,transparent 2px),radial-gradient(circle at 290px 240px,#fff0ff 0 1px,transparent 1.8px);opacity:.16;animation:particleDrift 55s linear infinite reverse}
+@keyframes particleDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(70px,-90px,0)}}
+@media(prefers-reduced-motion:reduce){body:before,body:after,.magic-orb{animation:none!important}}
