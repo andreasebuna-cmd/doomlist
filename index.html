@@ -7,17 +7,29 @@
 <body class="home">
 <div class="noise"></div><div class="grid"></div>
 <header class="topbar"><a class="brand" href="index.html"><span>DL</span> DOOMLIST</a><nav><a class="active" href="index.html">MENU</a><a href="list.html">LIST</a></nav><div class="status"><i></i> SYSTEM ONLINE</div></header>
-<section class="auth-panel" id="auth-panel">
-  <div class="auth-copy"><div class="eyebrow">IDENTITY // CLOUD SYNC</div><h2>YOUR PROGRESS.<br><em>EVERY DEVICE.</em></h2><p>Sign in to keep your watched list synced across devices.</p><div class="sync-status" id="sync-status"><i></i><span>SYNC NOT CONFIGURED</span></div></div>
-  <form id="auth-form" class="auth-form">
-    <label for="auth-email">EMAIL</label><input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" required>
-    <label for="auth-password">PASSWORD</label><input id="auth-password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required>
-    <button class="btn primary auth-submit" id="auth-submit" type="submit">SIGN IN <b>→</b></button>
-    <button class="auth-switch" id="auth-switch" type="button">NEED AN ACCOUNT? CREATE ONE</button>
-    <button class="auth-switch hidden" id="auth-logout" type="button">SIGN OUT</button>
-    <p class="auth-message" id="auth-message" role="status">Cloud sync needs Supabase setup before it can connect.</p>
-  </form>
-</section>\n<main class="hero">
+<section class="auth-gate" id="auth-panel" aria-modal="true" role="dialog" aria-labelledby="auth-title">
+<div class="magic-orb orb-one"></div><div class="magic-orb orb-two"></div><div class="auth-card">
+<a class="brand auth-brand" href="#" aria-label="DOOMLIST"><span>DL</span> DOOMLIST</a><div class="auth-emblem" aria-hidden="true">✦</div>
+<div class="eyebrow">A MULTIVERSE OF STORIES</div><h2 id="auth-title">WELCOME <em>BACK</em></h2><p class="auth-intro">Your Marvel journey, protected by a little magic.</p>
+<div class="auth-tabs"><span class="auth-mode active" id="auth-mode-label">SIGN IN</span><span class="sync-status" id="sync-status"><i></i><span>SECURE CONNECTION</span></span></div>
+<form id="auth-form" class="auth-form">
+<div class="signup-only hidden"><label for="auth-username">USERNAME</label><input id="auth-username" type="text" autocomplete="username" minlength="3" maxlength="24" pattern="[A-Za-z0-9_.-]+" placeholder="Your username"></div>
+<label for="auth-email">EMAIL ADDRESS</label><input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+<label for="auth-password">PASSWORD</label><input id="auth-password" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required>
+<div class="signup-only hidden"><label for="auth-confirm-password">CONFIRM PASSWORD</label><input id="auth-confirm-password" type="password" autocomplete="new-password" minlength="8" placeholder="Enter your password again"></div>
+<label class="terms-check signup-only hidden" for="auth-terms"><input id="auth-terms" type="checkbox"><span>I agree to the <button type="button" class="inline-link terms-open">Terms of Service</button>.</span></label>
+<button class="btn primary auth-submit" id="auth-submit" type="submit">SIGN IN <b>✦</b></button><button class="auth-switch" id="auth-switch" type="button">CREATE AN ACCOUNT</button><button class="auth-switch hidden" id="auth-logout" type="button">SIGN OUT</button>
+<p class="auth-message" id="auth-message" role="status">Sign in to continue to DOOMLIST.</p></form><div class="auth-footnote">YOUR LIST. YOUR UNIVERSE. YOUR PROGRESS.</div></div></section>
+<div class="terms-backdrop hidden" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title"><div class="terms-window"><button class="terms-close" type="button" aria-label="Close Terms of Service">×</button><div class="eyebrow">DOOMLIST // COMMUNITY GUIDELINES</div><h2 id="terms-title">TERMS OF <em>SERVICE</em></h2><div class="terms-content">
+<h3>1. Your account</h3><p>Provide a valid email address and keep your login details private. You are responsible for activity carried out through your account.</p>
+<h3>2. Honest information</h3><p>Choose a username that does not impersonate another person, harass others, or violate someone else's rights.</p>
+<h3>3. Your watch progress</h3><p>DOOMLIST stores your watched status so it can be synced across devices. Your account's progress is private to your account. Do not attempt to access another user's data.</p>
+<h3>4. Acceptable use</h3><p>Do not misuse the service, disrupt its operation, attempt unauthorized access, or use it for unlawful activity.</p>
+<h3>5. Availability and data</h3><p>The service is provided as available and may change. Keep your own records of anything important. We cannot promise uninterrupted service or permanent data retention.</p>
+<h3>6. Privacy</h3><p>Your email, username, and watch progress are used to provide account and synchronization features. Do not submit sensitive personal information.</p>
+<h3>7. Changes and contact</h3><p>These terms may be updated as DOOMLIST evolves. Continued use after an update means you accept the revised terms. For account or privacy questions, contact the site owner through the project's published contact channel.</p>
+<p class="terms-note">Last updated: October 8, 2026. DOOMLIST is a fan-made project and is not affiliated with Marvel Studios or Disney.</p></div></div></div>
+<main class="hero">
 <div class="eyebrow">MARVEL STUDIOS // MULTIVERSE PROTOCOL <span>01</span></div>
 <h1>READY FOR<br><em>DOOMSDAY?</em></h1>
 <p class="lead">A curated watch order for the films and series you need before the next Avengers event.</p>
@@ -25,5 +37,8 @@
 <div class="hero-meta"><div><small>MISSION</small><strong>DOOMSDAY</strong></div><div><small>PROTOCOL</small><strong>2026</strong></div><div><small>STATUS</small><strong class="green">ACTIVE</strong></div></div>
 </main>
 <section id="about" class="intel"><div class="section-tag">/ INTEL 02</div><div><h2>THE MULTIVERSE<br><span>IS COLLAPSING.</span></h2><p>Not every Marvel project is required. DOOMLIST isolates the stories that matter most: timelines, incursions, variants, mutants, Fantastic Four and the road to Doctor Doom.</p></div><div class="corner">SYS<br>0xD00M</div></section>
-<footer><span>DOOMLIST // v1.0</span><span>NO SPOILERS. JUST PREPARATION.</span></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>\n<script src="js/supabase-config.js"></script>\n<script src="js/app.js"></script>\n</body></html>
+<footer><span>DOOMLIST // v1.0</span><span>NO SPOILERS. JUST PREPARATION.</span><a class="footer-terms terms-open" href="#terms-modal">TERMS OF SERVICE</a></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/app.js"></script>
+</body></html>
