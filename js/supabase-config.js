@@ -1,5 +1,5 @@
 // DOOMLIST Supabase connection.
-// Fill these two values from Supabase > Project Settings > API.
-// Use the publishable/anon key only. NEVER put a service_role or secret key here.
-window.DOOMLIST_SUPABASE_URL = "";
-window.DOOMLIST_SUPABASE_KEY = "";
+// Publishable key is safe for frontend use when RLS policies are configured.
+// NEVER put a service_role or secret key here.
+window.DOOMLIST_SUPABASE_URL = "https://fjkdotkpnbohkdbcqetk.supabase.co";
+window.DOOMLIST_SUPABASE_KEY = "sb_publishable_qJDDbo9FA1WDyRcrhmBLpg_tLTgXoyS";
