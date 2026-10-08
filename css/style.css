@@ -101,3 +101,27 @@ footer{position:relative;z-index:1;display:flex;align-items:center;justify-conte
   76%{transform:translate3d(0,0,0) scale(5.5) rotate(-3deg)}
   100%{transform:translate3d(0,0,0) scale(10) rotate(5deg);opacity:.25;filter:drop-shadow(0 0 0 transparent)}
 }
+
+
+/* PERFORMANCE PASS: keep the portal cinematic without expensive full-screen repaints. */
+.cosmos-nebula{filter:blur(24px);transition:none;will-change:transform}
+.milky-way{filter:blur(8px);will-change:transform}
+.milky-way:before{filter:blur(3px)}
+.cosmos-stars{will-change:transform}
+.stars-far,.stars-near{animation-name:starsTravelSmooth}
+@keyframes starsTravelSmooth{
+  from{translate:0 0}
+  to{translate:36px -28px}
+}
+.portal-cosmos{transition:none;will-change:transform}
+.portal-stage{transition:transform .18s ease-out;will-change:transform}
+.portal-core{will-change:transform,opacity;backface-visibility:hidden}
+.portal-ring,.portal-arc,.portal-rune,.portal-center-mark{backface-visibility:hidden}
+@media(prefers-reduced-motion:reduce){
+  .cosmos-nebula,.milky-way,.cosmos-stars,.portal-ring,.portal-arc,.portal-rune,.portal-center-mark{animation:none!important}
+}
+@media(max-width:700px){
+  .cosmos-nebula{filter:blur(18px)}
+  .milky-way{filter:blur(6px)}
+  .stars-near{opacity:.35}
+}
