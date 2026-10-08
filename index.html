@@ -5,8 +5,16 @@
 <title>DOOMLIST // HOME</title><link rel="stylesheet" href="css/style.css">
 </head>
 <body class="home">
-<div class="noise"></div><div class="grid"></div>
-<header class="topbar"><a class="brand" href="index.html"><span>DL</span> DOOMLIST</a><nav><a class="active" href="index.html">MENU</a><a href="list.html">LIST</a></nav><div class="status"><i></i> SYSTEM ONLINE</div></header>
+<div class="noise" aria-hidden="true"></div><div class="grid" aria-hidden="true"></div>
+<section class="portal-intro" id="portal-intro" aria-label="Enter DOOMLIST">
+  <div class="portal-stars" aria-hidden="true"></div>
+  <button class="portal-core" id="portal-enter" type="button" aria-label="Enter the DOOMLIST portal">
+    <span class="portal-ring ring-a"></span><span class="portal-ring ring-b"></span><span class="portal-ring ring-c"></span>
+    <span class="portal-symbol">✦</span><span class="portal-label">ENTER THE MULTIVERSE</span>
+  </button>
+  <p class="portal-caption">A doorway to every timeline.</p>
+</section>
+<header class="topbar"><a class="brand" href="index.html"><span>DL</span> DOOMLIST</a><nav><a class="active" href="index.html">MENU</a><a href="list.html">LIST</a></nav><button class="account-control hidden" id="account-control" type="button">ACCOUNT <span>↗</span></button><div class="status"><i></i> MAGIC SYSTEM ONLINE</div></header>
 <section class="auth-gate" id="auth-panel" aria-modal="true" role="dialog" aria-labelledby="auth-title">
 <div class="magic-orb orb-one"></div><div class="magic-orb orb-two"></div><div class="auth-card">
 <a class="brand auth-brand" href="#" aria-label="DOOMLIST"><span>DL</span> DOOMLIST</a><div class="auth-emblem" aria-hidden="true">✦</div>
