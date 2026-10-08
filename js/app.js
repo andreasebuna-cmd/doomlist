@@ -173,17 +173,6 @@
       if (currentUser) loadCloudProgress();
       else updateProgressMessage();
     });
-    supabase.auth.getSession().then(({ data }) => {
-      currentUser = data.session?.user || null;
-      if (logoutButton) logoutButton.classList.toggle('hidden', !currentUser);
-      if (authSubmit) authSubmit.classList.toggle('hidden', Boolean(currentUser));
-      if (authSwitch) authSwitch.classList.toggle('hidden', Boolean(currentUser));
-      if (emailInput) emailInput.classList.toggle('hidden', Boolean(currentUser));
-      if (passwordInput) passwordInput.classList.toggle('hidden', Boolean(currentUser));
-      if (authForm) authForm.querySelectorAll('label').forEach(label => label.classList.toggle('hidden', Boolean(currentUser)));
-      if (currentUser) loadCloudProgress();
-      else updateProgressMessage();
-    });
   } else {
     setSyncStatus('SYNC NOT CONFIGURED');
     setMessage('Local mode active. Add the Supabase project URL and publishable key to enable accounts and cloud sync.');
